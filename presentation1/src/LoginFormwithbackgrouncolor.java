@@ -72,10 +72,10 @@ public class LoginFormwithbackgrouncolor extends JFrame implements ActionListene
         // Replace this with your own validation logic
         if ("akashboparai000@gmail.com".equals(email) && "pures123".equals(password)) {
             messageLabel.setText("Login successful!");
-            messageLabel.setForeground(Color.GREEN);
+            messageLabel.setForeground(Color.red);
         } else {
             messageLabel.setText("Invalid email or password.");
-            messageLabel.setForeground(Color.RED);
+            messageLabel.setForeground(Color.orange);
         }
     }
 
