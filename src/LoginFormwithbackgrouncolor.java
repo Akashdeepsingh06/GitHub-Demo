@@ -3,14 +3,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class LoginForm extends JFrame implements ActionListener {
+public class LoginFormwithbackgrouncolor extends JFrame implements ActionListener {
     private JLabel emailLabel, passwordLabel;
     private JTextField emailField;
     private JPasswordField passwordField;
     private JButton loginButton;
     private JLabel messageLabel;
 
-    public LoginForm() {
+    public LoginFormwithbackgrouncolor() {
         createComponents();
         setLayout(new GridBagLayout());
         addComponents();
@@ -20,7 +20,9 @@ public class LoginForm extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
         setVisible(true);
     }
-
+    private void setBackgroundColor() {
+        getContentPane().setBackground(Color.darkGray);
+    }
     private void createComponents() {
         emailLabel = new JLabel("Email:");
         passwordLabel = new JLabel("Password:");
@@ -70,12 +72,14 @@ public class LoginForm extends JFrame implements ActionListener {
         // Replace this with your own validation logic
         if ("test@example.com".equals(email) && "password123".equals(password)) {
             messageLabel.setText("Login successful!");
+            messageLabel.setForeground(Color.GREEN);
         } else {
             messageLabel.setText("Invalid email or password.");
+            messageLabel.setForeground(Color.RED);
         }
     }
 
     public static void main(String[] args) {
-        new LoginForm();
+        new LoginFormwithbackgrouncolor();
     }
 }
